@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 :root{
   --red:#ff3838;
 }
 
 *{
-  font-family: 'Yellowtail', cursive;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   outline: none; border: none;
   text-decoration: none;
@@ -29,6 +29,10 @@ body{
   background: white;
 }
 
+section{
+  padding: 2rem 9%;
+}
+
 header{
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -36,7 +40,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: black;
+  background: white;
   padding: 2rem 9%; 
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
@@ -72,12 +76,40 @@ header .navbar a:hover{
   display: none;
 }
 
+.home{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  min-height: 100vh;
+  align-items: center;
+  background: url(/images/home-img.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
+.home .content{
+  flex: 1 1 40rem;
+  padding: 6.5rem;
+}
 
+.home .image{
+flex: 1 1 40rem;
+}
 
+.home .image img{
+  width: 100%;
+}
 
+.home .content h3{
+  font-size: 5rem;
+  color: #333;
+}
 
-
+.home .content p{
+  font-size: 1.7rem;
+  color: #333;
+  padding: 1rem 0;
+}
 
 
 
@@ -112,4 +144,32 @@ header .navbar a:hover{
   #menu-bar{
     display: initial;
   }
+
+  header .navbar{
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: #f7f7f7;
+    border-top: .1rem solid rgb(0, 0, 0,.1);
+  }
+
+  header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a{
+    margin: 1.5rem;
+    padding: 1.5rem;
+    display: block;
+    border-left: .5rem solid #ff3838;
+    background: black;
+  }
+}
+
+
+@media(max-width:400px){
+
+  html{
+    font-size: 50%;
+  }
+
 }
